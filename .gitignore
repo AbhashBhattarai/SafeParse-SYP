@@ -1,0 +1,13 @@
+﻿__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+safeparse.db
+*.o
+*.exe
+
+*.db
+c_tests/fuzz_out/
+c_tests/bench
+c_tests/run_cases
