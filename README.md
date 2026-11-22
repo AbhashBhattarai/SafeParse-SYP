@@ -47,6 +47,7 @@ tested, and verified:
 - [ ] C correctness harness
 - [ ] Web application
 - [ ] Fuzzing harnesses
+- [x] Authentication-only web demo (static pages after login)
 - [ ] Benchmark and results
 - [ ] Documentation and paper
 

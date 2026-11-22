@@ -1,8 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Results — SafeParse Demo{% endblock %}
 {% block content %}
+
+<div class="demo-banner">&#9432; Demo mode: only authentication is live.</div>
+
 <div class="card">
     <h2>Evaluation Results</h2>
-    <p>No evaluation results recorded yet.</p>
+    <div class="btn-row">
+        <button type="button" class="demo-btn" title="Demo mode: not connected yet">Run Fuzzer</button>
+        <button type="button" class="demo-btn" title="Demo mode: not connected yet">Run Benchmark</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">Export CSV</button>
+    </div>
+    <div class="table-wrapper" style="margin-top:20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Spec</th>
+                    <th>Variant</th>
+                    <th>Fuzz Duration</th>
+                    <th>Crashes</th>
+                    <th>Avg Speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5" class="empty-state">
+                        <p>No evaluation results recorded yet</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
 {% endblock %}

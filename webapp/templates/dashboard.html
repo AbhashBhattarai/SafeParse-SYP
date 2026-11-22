@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Dashboard — SafeParse Demo{% endblock %}
 {% block content %}
+
+<div class="demo-banner">&#9432; Demo mode: only authentication is live.</div>
+
 <div class="card">
     <h2>SafeParse — Memory-Safe C Parser Generator</h2>
     <p>
@@ -11,9 +14,48 @@
         without sacrificing safety. The tool targets embedded and systems developers who
         need to parse untrusted network or file data without manual buffer-arithmetic errors.
     </p>
-    <div class="alert alert-info">
-        <strong>Demo mode:</strong> static pages, compiler not connected yet.
-        Navigation and login/logout are fully functional; all other pages show read-only content.
+    <div class="btn-row">
+        <button type="button" class="demo-btn btn-secondary" title="Demo mode: not connected yet">New Spec</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">View History</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">View Results</button>
     </div>
 </div>
+
+<div class="card">
+    <h3>Compiler Pipeline</h3>
+    <p style="color:#586069;font-size:0.9rem;">Each format spec passes through these stages to produce safe, auditable C code.</p>
+    <div class="pipeline-grid">
+        <div class="pipeline-step">
+            <span class="step-icon">&#128196;</span>
+            <div class="step-name">Spec</div>
+            <div class="step-desc">Binary format definition</div>
+        </div>
+        <div class="pipeline-step">
+            <span class="step-icon">&#128270;</span>
+            <div class="step-name">Lexer</div>
+            <div class="step-desc">Tokenises the spec file</div>
+        </div>
+        <div class="pipeline-step">
+            <span class="step-icon">&#128336;</span>
+            <div class="step-name">Parser</div>
+            <div class="step-desc">Builds an AST</div>
+        </div>
+        <div class="pipeline-step">
+            <span class="step-icon">&#10003;</span>
+            <div class="step-name">Checker</div>
+            <div class="step-desc">Type &amp; bounds validation</div>
+        </div>
+        <div class="pipeline-step">
+            <span class="step-icon">&#9889;</span>
+            <div class="step-name">Optimizer</div>
+            <div class="step-desc">Batches fixed-size checks</div>
+        </div>
+        <div class="pipeline-step">
+            <span class="step-icon">&#128296;</span>
+            <div class="step-name">Code Gen</div>
+            <div class="step-desc">Emits bounds-safe C</div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

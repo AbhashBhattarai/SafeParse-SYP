@@ -1,19 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Compile — SafeParse Demo{% endblock %}
 {% block content %}
+
+<div class="demo-banner">&#9432; Demo mode: only authentication is live.</div>
+
 <div class="card">
     <h2>Compile a Format Specification</h2>
-    <p><em>Demo mode: input is read-only. Compiler is not connected.</em></p>
 
     <div class="form-group">
-        <label for="spec_text">Format Specification (read-only)</label>
-        <textarea id="spec_text" name="spec_text" rows="8" readonly
+        <label for="spec_text">Format Specification</label>
+        <textarea id="spec_text" class="spec-input" rows="8" readonly
                   style="width:100%;font-family:monospace;">{{ spec_text }}</textarea>
     </div>
 
-    <div class="form-group" style="margin-top:20px;">
-        <label>Static sample output — not live output</label>
-        <pre style="background:#f4f4f4;padding:12px;border-radius:4px;overflow:auto;">{{ udp_header_excerpt }}</pre>
+    <div class="form-group">
+        <label>Output Mode</label>
+        <div class="mode-selector">
+            <label><input type="radio" name="mode" disabled checked> Naive</label>
+            <label><input type="radio" name="mode" disabled> Optimized</label>
+        </div>
+    </div>
+
+    <div class="btn-row">
+        <button type="button" class="demo-btn btn-secondary" title="Demo mode: not connected yet">Compile</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">Download C</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">Clear</button>
     </div>
 </div>
+
+<div class="card">
+    <p class="sample-label">Static sample, not live output — copied from udp_optimized.h in the reference build</p>
+    <pre>{{ udp_header_excerpt }}</pre>
+</div>
+
 {% endblock %}

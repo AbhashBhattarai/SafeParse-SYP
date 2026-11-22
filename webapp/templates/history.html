@@ -1,8 +1,33 @@
 {% extends "base.html" %}
 {% block title %}History — SafeParse Demo{% endblock %}
 {% block content %}
+
+<div class="demo-banner">&#9432; Demo mode: only authentication is live.</div>
+
 <div class="card">
     <h2>Compilation History</h2>
-    <p>No specifications have been compiled yet. History will appear here once the compiler is connected.</p>
+    <div class="btn-row">
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">Filter</button>
+        <button type="button" class="demo-btn btn-outline" title="Demo mode: not connected yet">Export</button>
+    </div>
+    <div class="table-wrapper" style="margin-top:20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Spec</th>
+                    <th>Variant</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3" class="empty-state">
+                        <p>No specs compiled yet (demo mode)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
 {% endblock %}
