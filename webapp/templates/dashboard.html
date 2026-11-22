@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — SafeParse Demo{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>SafeParse — Memory-Safe C Parser Generator</h2>
+    <p>
+        SafeParse is a compiler that takes a binary format specification and generates
+        bounds-checked C parsers in two variants: a straightforward <em>naive</em> parser
+        with per-field checks, and an <em>optimized</em> parser that batches contiguous
+        fixed-size fields into a single upfront bounds check, reducing branch overhead
+        without sacrificing safety. The tool targets embedded and systems developers who
+        need to parse untrusted network or file data without manual buffer-arithmetic errors.
+    </p>
+    <div class="alert alert-info">
+        <strong>Demo mode:</strong> static pages, compiler not connected yet.
+        Navigation and login/logout are fully functional; all other pages show read-only content.
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SafeParse Demo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="{{ url_for('index') }}">SafeParse</a>
+            <span class="tagline">Demo Mode</span>
+        </div>
+        <div class="nav-links">
+            {% if session.get("user_id") %}
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a href="{{ url_for('compile_page') }}">Compile</a>
+                <a href="{{ url_for('history') }}">History</a>
+                <a href="{{ url_for('results') }}">Results</a>
+                <span class="nav-user">
+                    {{ session.get("username") }}
+                    <span class="role-badge role-{{ session.get('role', 'developer') }}">
+                        {{ session.get("role", "developer") }}
+                    </span>
+                </span>
+                <form method="POST" action="{{ url_for('logout') }}" style="display:inline;">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                    <button type="submit" class="btn btn-secondary" style="padding:4px 10px;">Log Out</button>
+                </form>
+            {% else %}
+                <a href="{{ url_for('login') }}">Log In</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
