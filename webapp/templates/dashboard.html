@@ -26,32 +26,26 @@
     <p style="color:#586069;font-size:0.9rem;">Each format spec passes through these stages to produce safe, auditable C code.</p>
     <div class="pipeline-grid">
         <div class="pipeline-step">
-            <span class="step-icon">&#128196;</span>
             <div class="step-name">Spec</div>
             <div class="step-desc">Binary format definition</div>
         </div>
         <div class="pipeline-step">
-            <span class="step-icon">&#128270;</span>
             <div class="step-name">Lexer</div>
             <div class="step-desc">Tokenises the spec file</div>
         </div>
         <div class="pipeline-step">
-            <span class="step-icon">&#128336;</span>
             <div class="step-name">Parser</div>
             <div class="step-desc">Builds an AST</div>
         </div>
         <div class="pipeline-step">
-            <span class="step-icon">&#10003;</span>
             <div class="step-name">Checker</div>
             <div class="step-desc">Type &amp; bounds validation</div>
         </div>
         <div class="pipeline-step">
-            <span class="step-icon">&#9889;</span>
             <div class="step-name">Optimizer</div>
             <div class="step-desc">Batches fixed-size checks</div>
         </div>
         <div class="pipeline-step">
-            <span class="step-icon">&#128296;</span>
             <div class="step-name">Code Gen</div>
             <div class="step-desc">Emits bounds-safe C</div>
         </div>

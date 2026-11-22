@@ -29,6 +29,7 @@ if not secret_key:
 
 app.secret_key = secret_key
 app.config["DEBUG"] = False
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=1)
